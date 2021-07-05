@@ -14,9 +14,9 @@ end
 function mod:CHAT_MSG_WHISPER(event_name, msg, sender)
   if not UnitInRaid("player") then return end
 
-  if msg:sub(1, 12):lower() ~= 'epgp standby' then return end
+  if msg:sub(1, 7):lower() ~= 'standby' then return end
 
-  local member = msg:sub(13):match("([^ ]+)")
+  local member = msg:sub(8):match("([^ ]+)")
   if member then
     -- http://lua-users.org/wiki/LuaUnicode
     local firstChar, offset = member:match("([%z\1-\127\194-\244][\128-\191]*)()")
