@@ -328,12 +328,12 @@ local function CreateEPGPLogFrame()
   table.insert(SIDEFRAMES, f)
 
   f:SetResizable(true)
-  f:SetMinResize(600, 435)
-  f:SetMaxResize(1200, 435)
+  f:SetMinResize(550, 600)
+  f:SetMaxResize(750, 600)
 
   f:Hide()
-  f:SetWidth(600)
-  f:SetHeight(435)
+  f:SetWidth(550)
+  f:SetHeight(600)
   f:SetPoint("TOPLEFT", EPGPFrame, "TOPRIGHT", -37, -6)
 
   local t = f:CreateTexture(nil, "OVERLAY")
