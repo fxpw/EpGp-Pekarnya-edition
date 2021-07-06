@@ -283,7 +283,7 @@ function mod:AddLoot(link, mayDistribute, quantity)
   if gpvalue and gpvalue2 then
     tinsert(itemInfo, format('GP: %d or %d', gpvalue, gpvalue2))
   elseif gpvalue then
-    tinsert(itemInfo, format('GP: %d', gpvalue))
+   -- tinsert(itemInfo, format('GP: %d', gpvalue))
   else
     tinsert(itemInfo, 'GP: ?')
   end
