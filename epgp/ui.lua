@@ -61,7 +61,7 @@ local function CreateEPGPFrame()
   f:SetHitRectInsets(0, 30, 0, 45)
 
   local t = f:CreateTexture(nil, "BACKGROUND")
-  t:SetTexture("Interface\\PetitionFrame\\GuildCharter-Icon")
+  t:SetTexture("Interface\\AddOns\\epgp\\images\\bakery")
   t:SetWidth(60)
   t:SetHeight(60)
   t:SetPoint("TOPLEFT", f, "TOPLEFT", 7, -6)
@@ -332,7 +332,7 @@ local function CreateEPGPLogFrame()
   f:SetMaxResize(1200, 435)
 
   f:Hide()
-  f:SetWidth(435)
+  f:SetWidth(600)
   f:SetHeight(435)
   f:SetPoint("TOPLEFT", EPGPFrame, "TOPRIGHT", -37, -6)
 
@@ -594,7 +594,7 @@ end
 local function AddGPControls(frame)
   local reasonLabel =
     frame:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
-  reasonLabel:SetText("Кексы за шмотки")
+  reasonLabel:SetText("Снять кексы за шмотку")
   reasonLabel:SetPoint("TOPLEFT")
 
   local dropDown = CreateFrame("Frame", "$parentGPControlDropDown",
@@ -717,7 +717,7 @@ end
 local function AddEPControls(frame, withRecurring)
   local reasonLabel =
     frame:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
-  reasonLabel:SetText("Кексы за Инсты")
+  reasonLabel:SetText("Снять кексы по причине")
   reasonLabel:SetPoint("TOPLEFT")
 
   local dropDown = CreateFrame("Frame", "$parentEPControlDropDown",
@@ -1238,9 +1238,9 @@ local function CreateEPGPFrameStandings()
 
   -- Populate the table
   CreateTable(tabl,
-              {"Имя", " ", " ", "Кексов"},
-              {0, 64, 64, 64},
-              {"LEFT", "RIGHT", "RIGHT", "RIGHT"},
+              {"Имя", "Кексов"},
+              {0, 128},
+              {"LEFT", "CENTER"},
               27)  -- The scrollBarWidth
 
   -- Make the scrollbar
@@ -1305,10 +1305,6 @@ local function CreateEPGPFrameStandings()
     "OnClick", function(self) EPGP:StandingsSort("NAME") end)
   tabl.headers[2]:SetScript(
     "OnClick", function(self) EPGP:StandingsSort("EP") end)
-  tabl.headers[3]:SetScript(
-    "OnClick", function(self) EPGP:StandingsSort("EP") end)
-  tabl.headers[4]:SetScript(
-    "OnClick", function(self) EPGP:StandingsSort("EP") end)
 
   -- Install the update function on rowFrame.
   local function UpdateStandings()
@@ -1327,15 +1323,13 @@ local function CreateEPGPFrameStandings()
         local c = RAID_CLASS_COLORS[EPGP:GetClass(row.name)]
         row.cells[1]:SetTextColor(c.r, c.g, c.b)
         local ep, gp = EPGP:GetEPGP(row.name)
-        row.cells[2]:SetText(" ")
-        row.cells[3]:SetText(" ")
+        row.cells[2]:SetText(ep)
 		
         local pr = 0
         if gp then
           pr = ep / gp
         end
         if pr > 9999 then
-          row.cells[4]:SetText(ep)
         
         end
         row.check:Hide()

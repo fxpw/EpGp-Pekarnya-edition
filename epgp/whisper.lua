@@ -76,7 +76,7 @@ end
 
 mod.dbDefaults = {
   profile = {
-    enable = false,
+    enable = true,
     medium = "GUILD",
   }
 }
