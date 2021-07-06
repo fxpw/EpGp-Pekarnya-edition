@@ -22,7 +22,7 @@ local function RestoreAnchors(t)
 end
 
 local blizzardPopupAnchors = {}
-
+ -- StaticPopup1:SetWidth(1000)
 StaticPopupDialogs["EPGP_CONFIRM_GP_CREDIT"] = {
   text = L["Credit GP to %s"],
   button1 = ACCEPT,
@@ -33,6 +33,7 @@ StaticPopupDialogs["EPGP_CONFIRM_GP_CREDIT"] = {
   hideOnEscape = 1,
   hasEditBox = 1,
   hasItemFrame = 1,
+  
 
   OnAccept = function(self)
                local link = self.itemFrame.link
@@ -50,13 +51,14 @@ StaticPopupDialogs["EPGP_CONFIRM_GP_CREDIT"] = {
                SaveAnchors(blizzardPopupAnchors[self],
                            self.itemFrame, self.editBox, self.button1)
              end
-
-             self.itemFrame:SetPoint("CENTER", 0, 0)
+-- self.StaticPopup1:SetWidth(1000)
+             self.itemFrame:SetPoint("LEFT", 10, 0)
 			 -- self.itemFrame:SetHeight(40)
 			 -- self.itemFrame:SetWidth(40)
              -- self.editBox:SetPoint(
-               -- "LEFT", blizzardPopupAnchors[self], "RIGHT", 150, -10) 		   
-             self.editBox:SetPoint("TOP", 0, 0)
+               -- "CENTER", self.itemFrame, "TOP", 0 , 0)  
+             self.editBox:SetPoint("RIGHT", -10, 0)
+			  -- self.editBox:SetPoint("TOPRIGHT", 0, 0)
              -- self.button1:SetPoint(
                -- "TOPRIGHT", self.itemFrame, "BOTTOMRIGHT", 0, 0)
 
