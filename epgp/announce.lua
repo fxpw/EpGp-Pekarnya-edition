@@ -21,11 +21,11 @@ function mod:AnnounceTo(medium, fmt, ...)
   end
 
   local msg = string.format(fmt, ...)
-  local str = "EPGP:"
+  local str = ""
   for _,s in pairs({strsplit(" ", msg)}) do
     if #str + #s >= 250 then
       SendChatMessage(str, medium, nil, channel)
-      str = "EPGP:"
+      str = ""
     end
     str = str .. " " .. s
   end

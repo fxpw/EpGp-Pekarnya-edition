@@ -51,18 +51,18 @@ StaticPopupDialogs["EPGP_CONFIRM_GP_CREDIT"] = {
                            self.itemFrame, self.editBox, self.button1)
              end
 
-             -- self.itemFrame:SetPoint("TOPLEFT", 85, -35)
+             self.itemFrame:SetPoint("CENTER", 0, 0)
 			 -- self.itemFrame:SetHeight(40)
 			 -- self.itemFrame:SetWidth(40)
-             self.editBox:SetPoint(
-               "TOPLEFT", self.itemFrame, "TOPRIGHT", -20, 85)  
-             -- self.editBox:SetPoint("RIGHT", -85, 0)
+             -- self.editBox:SetPoint(
+               -- "LEFT", blizzardPopupAnchors[self], "RIGHT", 150, -10) 		   
+             self.editBox:SetPoint("TOP", 0, 0)
              -- self.button1:SetPoint(
                -- "TOPRIGHT", self.itemFrame, "BOTTOMRIGHT", 0, 0)
 
              local gp1, gp2 = GP:GetValue(self.itemFrame.link)
              if not gp1 then
-               self.editBox:SetText("")
+               self.editBox:SetText("-200")
              elseif not gp2 then
                self.editBox:SetText(tostring(gp1))
              else
