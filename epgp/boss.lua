@@ -58,7 +58,7 @@ end
 
 mod.dbDefaults = {
   profile = {
-    enabled = false,
+    enabled = true,
     wipedetection = false,
   },
 }

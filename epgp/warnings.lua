@@ -49,14 +49,14 @@ function mod:OnEnable()
   }
 
   -- We want to show this warning just once.
-  local function multiple_masters_warning()
-    StaticPopup_Show("EPGP_MULTIPLE_MASTERS_WARNING")
-    for _, event in pairs(events_for_multiple_masters_warning) do
-      EPGP.UnregisterCallback(self, event)
-    end
-  end
+  -- local function multiple_masters_warning()
+    -- StaticPopup_Show("EPGP_MULTIPLE_MASTERS_WARNING")
+    -- for _, event in pairs(events_for_multiple_masters_warning) do
+      -- EPGP.UnregisterCallback(self, event)
+    -- end
+  -- end 
 
-  for _, event in pairs(events_for_multiple_masters_warning) do
-    EPGP.RegisterCallback(self, event, multiple_masters_warning)
-  end
+  -- for _, event in pairs(events_for_multiple_masters_warning) do
+    -- EPGP.RegisterCallback(self, event, multiple_masters_warning)
+  -- end
 end

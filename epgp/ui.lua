@@ -594,7 +594,7 @@ end
 local function AddGPControls(frame)
   local reasonLabel =
     frame:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
-  reasonLabel:SetText("Снять кексы за шмотку")
+  reasonLabel:SetText("Снять Кексы за шмотку")
   reasonLabel:SetPoint("TOPLEFT")
 
   local dropDown = CreateFrame("Frame", "$parentGPControlDropDown",
@@ -717,7 +717,7 @@ end
 local function AddEPControls(frame, withRecurring)
   local reasonLabel =
     frame:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
-  reasonLabel:SetText("Снять кексы по причине")
+  reasonLabel:SetText("Снять Кексы по причине")
   reasonLabel:SetPoint("TOPLEFT")
 
   local dropDown = CreateFrame("Frame", "$parentEPControlDropDown",
