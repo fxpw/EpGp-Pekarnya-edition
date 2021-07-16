@@ -41,7 +41,7 @@ local function ToggleOnlySideFrame(frame)
     end
   end
 end
-
+-------------
 local function CreateEPGPFrame()
   -- EPGPFrame
   local f = CreateFrame("Frame", "EPGPFrame", UIParent)
